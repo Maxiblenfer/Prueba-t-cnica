@@ -1,0 +1,176 @@
+<form [formGroup]="formactualizar" style="padding: 30px" (ngSubmit)="ActualizarPersona()" *ngIf="mostrarFormulario">
+
+
+    <div class="mb-3">
+        <label for="nombres" class="form-label">Nombres</label>
+        <input type="text" class="form-control" id="nombres" formControlName="nombres" />
+        <span class="text-danger" *ngIf="
+      formactualizar.get('nombres')!.hasError('required') &&
+      formactualizar.get('nombres')!.touched
+      ">Los nombres son requeridos</span
+    >
+  </div>
+  <div class="mb-3">
+    <label for="apellidos" class="form-label">Apellidos</label>
+    <input
+      type="text"
+      class="form-control"
+      id="apellidos"
+      formControlName="apellidos"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+      formactualizar.get('apellidos')!.hasError('required') &&
+      formactualizar.get('apellidos')!.touched
+      "
+      >Los apellidos son requeridos</span
+    >
+  </div>
+
+  <div class="mb-3">
+    <label for="fnacimiento " class="form-label">Fecha de nacimiento</label>
+    <input
+      type="date"
+      class="form-control"
+      id="fnacimiento"
+      formControlName="fechanacimiento"
+      [value]="fechanacimiento"
+    />
+  </div>
+  <span
+    class="text-danger"
+    *ngIf="
+    formactualizar.get('fechanacimiento')!.hasError('required') &&
+    formactualizar.get('fechanacimiento')!.touched
+    "
+    >La fecha de nacimiento es requerida</span
+  >
+  <div class="mb-3">
+    <label for="tpersona " class="form-label">Tipo de persona</label>
+    <select class="form-control" id="tpersona" formControlName="tipo">
+      <option value="" disabled selected>Seleccione un tipo de persona</option>
+      <option [value]="tipo" *ngFor="let tipo of Tipos">{{ tipo }}</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="fbaja " class="form-label">Fecha de baja</label>
+    <input
+      type="date"
+      class="form-control"
+      id="fbaja "
+      formControlName="fechabaja"
+      [value]="fechabaja"
+    />
+  </div>
+  <span
+    class="text-danger"
+    *ngIf="
+    formactualizar.get('fechabaja')!.hasError('required') &&
+    formactualizar.get('fechabaja')!.touched
+    "
+    >La fecha de baja es requerida</span
+  >
+  <div class="mb-3">
+    <label for="Usuario" class="form-label">Usuario</label>
+    <input
+      type="text"
+      class="form-control"
+      id="Usuario "
+      formControlName="usuario"
+    />
+  </div>
+  <span
+    class="text-danger"
+    *ngIf="
+    formactualizar.get('usuario')!.hasError('required') &&
+    formactualizar.get('usuario')!.touched
+    "
+    >El usuario es requerido</span
+  >
+  <div class="mb-3">
+    <label for="direccion" class="form-label">Dirección</label>
+    <input
+      type="text"
+      class="form-control"
+      id="direccion "
+      formControlName="direccion"
+    />
+  </div>
+  <span
+    class="text-danger"
+    *ngIf="
+    formactualizar.get('direccion')!.hasError('required') &&
+    formactualizar.get('direccion')!.touched
+    "
+    >La dirección es requerida</span
+  >
+  <div class="mb-3">
+    <label for="descripcion" class="form-label">descripcion</label>
+
+    <textarea
+      name=""
+      id="descripcion"
+      cols="30"
+      rows="10"
+      class="form-control"
+      formControlName="descripcion"
+    ></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="telefono " class="form-label">Teléfono fijo</label>
+    <input
+      type="tel"
+      class="form-control"
+      id="telefono "
+      formControlName="telefono"
+    />
+  </div>
+  <span
+    class="text-danger"
+    *ngIf="
+    formactualizar.get('telefono')!.hasError('required') &&
+    formactualizar.get('telefono')!.touched
+    "
+    >El teléfono fijo es requerido</span
+  >
+  <div class="mb-3">
+    <label for="movil" class="form-label">Teléfono movil</label>
+    <input
+      type="tel"
+      class="form-control"
+      id="movil "
+      formControlName="movil"
+    />
+  </div>
+  <span
+    class="text-danger"
+    *ngIf="
+    formactualizar.get('movil')!.hasError('required') &&
+    formactualizar.get('movil')!.touched
+    "
+    >El teléfono movil es requerido</span
+  >
+  <div class="mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      formControlName="email"
+    />
+  </div>
+  <span
+    class="text-danger"
+    *ngIf="
+    formactualizar.get('email')!.hasError('required') &&
+    formactualizar.get('email')!.touched
+    "
+    >El email es requerido</span
+  >
+  <button type="submit" class="btn btn-primary" [disabled]="formactualizar.invalid">
+    Actualziar datos
+  </button>
+</form>

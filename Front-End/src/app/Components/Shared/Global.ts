@@ -1,0 +1,1 @@
+export const rutaglobal="https://localhost:7066/api/";

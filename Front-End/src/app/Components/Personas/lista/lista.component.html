@@ -1,0 +1,41 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Documento</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Fecha de nacimiento</th>
+            <th scope="col">Tipo de persona</th>
+            <th scope="col">Género</th>
+            <th scope="col">Fecha de baja</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Teléfono fijo</th>
+            <th scope="col">Teléfono móvil</th>
+            <th scope="col">E-mail</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let persona of personas">
+            <th scope="row">{{ persona.documento }}</th>
+            <td>{{ persona.nombres }}</td>
+            <td>{{ persona.apellidos }}</td>
+            <td>{{ persona.fechanacimiento |date}}</td>
+            <td>{{ persona.tipo }}</td>
+            <td>{{ persona.genero }}</td>
+            <td>{{ persona.fechabaja|date }}</td>
+            <td>{{ persona.usuario }}</td>
+            <td>{{ persona.direccion }}</td>
+            <td>{{ persona.descripcion }}</td>
+            <td>{{ persona.telefonofijo }}</td>
+            <td>{{ persona.telefonomovil }}</td>
+            <td>{{ persona.email }}</td>
+            <td><a style="margin-bottom: 10px;" [routerLink]="['actualizar/',persona.documento]" class="btn btn-secondary">Actualziar datos</a>
+                <a [routerLink]="['RegistrarPaciente/',persona.documento]" class="btn btn-primary">Registrar Paciente</a>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
